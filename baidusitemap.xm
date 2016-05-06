@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/05/05/stock-txd/</loc>
+    <lastmod>2016-05-06T16:44:33.128Z</lastmod>
+    <data>
+        <display>
+        <title>炒股 | 通信达T0002个性化设置</title>
+        <pubTime>2016-05-05T01:41:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="投资理财" url="http://yoursite.com/categories/%E6%8A%95%E8%B5%84%E7%90%86%E8%B4%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/05/05/film-comments/</loc>
+    <lastmod>2016-05-06T05:25:21.575Z</lastmod>
+    <data>
+        <display>
+        <title>电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014</title>
+        <pubTime>2016-05-05T14:57:03.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="电影电视剧" url="http://yoursite.com/categories/%E7%94%B5%E5%BD%B1%E7%94%B5%E8%A7%86%E5%89%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/05/04/config-5267%20blog/</loc>
     <lastmod>2016-05-04T14:23:52.959Z</lastmod>
     <data>
