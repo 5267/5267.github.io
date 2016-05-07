@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/warn.html"><![endif]-->
 
-<title>5267&#39;s blog - if not now， when？ if not me， who？</title>
+<title>Python | 零碎知识（1）：字典排序问题</title>
 <meta name="author" content="5267">
 
 <meta name="keywords" content="undefined">
@@ -83,10 +83,9 @@
 
     <div id="post">
       <div id="pjax">
-        
-    <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-05-07">Python | 零碎知识（1）：字典排序问题</h1>
-      <h2 id="实战：统计Python中的字数"><a href="#实战：统计Python中的字数" class="headerlink" title="实战：统计Python中的字数"></a><font color="blue">实战：统计Python中的字数</font></h2><p><strong>问题</strong><br>在 Python 中实施函数“count_words()”，该函数将字符串“s”和数字“n”用作输入，并返回“s”中“n”个出现频率最高的单词。返回值应该是一个元组列表-出现频率最高的“n”个单词及其相应的出现次数“[(, ), (, ), …]”，按出现次数的降序排列。<br>您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排列出现次数相同的单词。<br>例如：</p>
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="2016-05-07">Python | 零碎知识（1）：字典排序问题</h1>
+  <h2 id="实战：统计Python中的字数"><a href="#实战：统计Python中的字数" class="headerlink" title="实战：统计Python中的字数"></a><font color="blue">实战：统计Python中的字数</font></h2><p><strong>问题</strong><br>在 Python 中实施函数“count_words()”，该函数将字符串“s”和数字“n”用作输入，并返回“s”中“n”个出现频率最高的单词。返回值应该是一个元组列表-出现频率最高的“n”个单词及其相应的出现次数“[(, ), (, ), …]”，按出现次数的降序排列。<br>您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排列出现次数相同的单词。<br>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;,3)</span><br><span class="line">    # 输出  =  [(&apos;butter&apos;, 2), (&apos;a&apos;, 1), (&apos;betty&apos;, 1)]</span><br></pre></td></tr></table></figure>
 <p><strong>思路解析及代码</strong><br>（1）字符切分(split)，统计各单词出现的次数(字典get)。（2）使用排序函数(sorted)对字典进行排序，其中定义比较函数compare是关键。代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># 功能：统计单词数，先按出现次数(大到小)排序，次数相同时，按单词字母顺序排序</span><br><span class="line">def compare(a,b):</span><br><span class="line">    if b[1]&gt;a[1]:</span><br><span class="line">        return 1</span><br><span class="line">    elif b[1]==a[1]:</span><br><span class="line">        if a[0]&gt;b[0]:</span><br><span class="line">            return 1</span><br><span class="line">        else:</span><br><span class="line">            return -1</span><br><span class="line">    else: return -1</span><br><span class="line">def count_words(s, n):</span><br><span class="line">    &quot;&quot;&quot;Return the n most frequently occuring words in s.&quot;&quot;&quot;</span><br><span class="line">    ##Count the number of occurences of each word in s</span><br><span class="line">    d =&#123;&#125;</span><br><span class="line">    for word in s.split():</span><br><span class="line">        d[word] =d.get(word,0)+1  #D[k] if k in D, else d.  d defaults to None</span><br><span class="line">    ##Sort the occurences in descending order (alphabexcally in case of xes)</span><br><span class="line">    #d =sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">    #print &quot;按值排序，从大到小 d=&quot;, d</span><br><span class="line">    vk =sorted(d.items(),cmp=compare)</span><br><span class="line">    return vk[:n]</span><br><span class="line">    ##Return the top n words as a list of tuples (&lt;word&gt;, &lt;count&gt;)</span><br><span class="line">def test_run():</span><br><span class="line">    &quot;&quot;&quot;Test count_words() with some inputs.&quot;&quot;&quot;</span><br><span class="line">    print count_words(&quot;cat bat mat cat bat cat&quot;, 3)</span><br><span class="line">    print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;, 3)</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    test_run()</span><br></pre></td></tr></table></figure>
@@ -105,8 +104,8 @@ cmp(10,10)  ---&gt; 0
 <p>从例子中可知，<em>cmp=lambda a,b:a[‘age’]-b[‘age’], a={‘name’:’zhang3’,’age’:15}，b={‘name’:’li4’,’age’:12}，a[‘age’]=15-12=b[‘age’]=3&gt;0</em>，返回True。触发reverse=True参数，即从小打大，顺序互换。</p>
 <p><strong>注意</strong>：在python3.x中取消了cmp参数，也不支持直接往sort()里面传函数了。可以构造排序函数传递给key来实现。</p>
 
-    </article>
-    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+</article>
+<button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
 <script src="/js/js-lib.js" type="text/javascript"></script>
 
   <link rel="stylesheet" type="text/css" href="/css/codeStyle/xcode.css" />
@@ -122,7 +121,7 @@ cmp(10,10)  ---&gt; 0
 
 
 <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="undefined" data-title="Python | 零碎知识（1）：字典排序问题" data-url="http://5267.github.io/undefined"></div>
+  <div class="ds-thread" data-thread-key="undefined" data-title="Python | 零碎知识（1）：字典排序问题" data-url="http://5267.github.io/http://yoursite.com/2016/05/07/Coding/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -137,8 +136,6 @@ var duoshuoQuery = {short_name:"5267"};
   })();
   </script>
 <!-- 多说公共JS代码 end -->
-
-
 
         <section>
  <center>	<font size=3  color=purple>专注数据分析、数据挖掘、大数据领域，习惯使用R、Python两把数据分析利器。非常推崇开源理念，我将在这儿和大家分享平时学习、生活的点点滴滴，期待和大伙儿共同进步！曾实习单位：蚂蚁金服*大数据安全部(数据分析师)，同花顺*金融研究中心(金融研究员)，IBM*CDL(consultant)</font> </center> <br/>

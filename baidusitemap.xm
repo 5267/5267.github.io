@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/05/07/Coding/</loc>
+    <lastmod>2016-05-07T17:11:37.963Z</lastmod>
+    <data>
+        <display>
+        <title>Python | 零碎知识（1）：字典排序问题</title>
+        <pubTime>2016-05-07T10:41:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="CodingLife" url="http://yoursite.com/categories/CodingLife/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/05/05/stock-txd/</loc>
     <lastmod>2016-05-06T16:44:33.128Z</lastmod>
     <data>
