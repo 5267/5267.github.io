@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/05/13/voa-Filter-Blue-Light-for-Better-Sleep/</loc>
+    <lastmod>2016-05-13T01:41:47.078Z</lastmod>
+    <data>
+        <display>
+        <title>VOA | 听力 | Filter Blue Light for Better Sleep</title>
+        <pubTime>2016-05-13T00:54:54.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="English" url="http://yoursite.com/categories/English/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/05/09/tv-series-1/</loc>
+    <lastmod>2016-05-09T15:08:38.444Z</lastmod>
+    <data>
+        <display>
+        <title>电视剧 | 疑犯追踪 | Person of Interest</title>
+        <pubTime>2016-05-09T15:06:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="电影电视剧" url="http://yoursite.com/categories/%E7%94%B5%E5%BD%B1%E7%94%B5%E8%A7%86%E5%89%A7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/05/07/Coding/</loc>
     <lastmod>2016-05-07T17:11:37.963Z</lastmod>
     <data>

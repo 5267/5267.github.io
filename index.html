@@ -26,13 +26,15 @@
       
       <li id="CodingLife" class="tags__li tags-btn">CodingLife</li>
       
-      <li id="电影电视剧" class="tags__li tags-btn">电影电视剧</li>
+      <li id="小技能" class="tags__li tags-btn">小技能</li>
       
       <li id="投资理财" class="tags__li tags-btn">投资理财</li>
       
-      <li id="读书笔记" class="tags__li tags-btn">读书笔记</li>
+      <li id="English" class="tags__li tags-btn">English</li>
       
-      <li id="小技能" class="tags__li tags-btn">小技能</li>
+      <li id="电影电视剧" class="tags__li tags-btn">电影电视剧</li>
+      
+      <li id="读书笔记" class="tags__li tags-btn">读书笔记</li>
       
     </ul>
     <div id="tags__bottom">
@@ -54,8 +56,8 @@
             
       
             
-                <a class="电影电视剧 pl__all" href="/2016/05/05/film-comments/" title="电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014">
-                  <span class="pl__circle"></span><span class="pl__title">电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014</span><span class="pl__date">2016-05-05</span>
+                <a class="小技能 pl__all" href="/2016/05/04/config-5267 blog/" title="How to configure 5267 blog in several  hours">
+                  <span class="pl__circle"></span><span class="pl__title">How to configure 5267 blog in several  hours</span><span class="pl__date">2016-05-04</span>
                 </a>
             
       
@@ -66,14 +68,24 @@
             
       
             
-                <a class="读书笔记 pl__all" href="/2016/05/04/test-post/" title="道德经 | 第一章">
-                  <span class="pl__circle"></span><span class="pl__title">道德经 | 第一章</span><span class="pl__date">2016-05-04</span>
+                <a class="English pl__all" href="/2016/05/13/voa-Filter-Blue-Light-for-Better-Sleep/" title="VOA | 听力 | Filter Blue Light for Better Sleep">
+                  <span class="pl__circle"></span><span class="pl__title">VOA | 听力 | Filter Blue Light for Better Sleep</span><span class="pl__date">2016-05-13</span>
                 </a>
             
       
             
-                <a class="小技能 pl__all" href="/2016/05/04/config-5267 blog/" title="How to configure 5267 blog in several  hours">
-                  <span class="pl__circle"></span><span class="pl__title">How to configure 5267 blog in several  hours</span><span class="pl__date">2016-05-04</span>
+                <a class="电影电视剧 pl__all" href="/2016/05/09/tv-series-1/" title="电视剧 | 疑犯追踪 | Person of Interest">
+                  <span class="pl__circle"></span><span class="pl__title">电视剧 | 疑犯追踪 | Person of Interest</span><span class="pl__date">2016-05-09</span>
+                </a>
+            
+                <a class="电影电视剧 pl__all" href="/2016/05/05/film-comments/" title="电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014">
+                  <span class="pl__circle"></span><span class="pl__title">电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014</span><span class="pl__date">2016-05-05</span>
+                </a>
+            
+      
+            
+                <a class="读书笔记 pl__all" href="/2016/05/04/test-post/" title="道德经 | 第一章">
+                  <span class="pl__circle"></span><span class="pl__title">道德经 | 第一章</span><span class="pl__date">2016-05-04</span>
                 </a>
             
       
@@ -85,25 +97,41 @@
       <div id="pjax">
         
     <article id="post__content">
-      <h1 id="post__title" data-identifier="2016-05-07">Python | 零碎知识（1）：字典排序问题</h1>
-      <h2 id="实战：统计Python中的字数"><a href="#实战：统计Python中的字数" class="headerlink" title="实战：统计Python中的字数"></a><font color="blue">实战：统计Python中的字数</font></h2><p><strong>问题</strong><br>在 Python 中实施函数“count_words()”，该函数将字符串“s”和数字“n”用作输入，并返回“s”中“n”个出现频率最高的单词。返回值应该是一个元组列表-出现频率最高的“n”个单词及其相应的出现次数“[(, ), (, ), …]”，按出现次数的降序排列。<br>您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排列出现次数相同的单词。<br>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;,3)</span><br><span class="line">    # 输出  =  [(&apos;butter&apos;, 2), (&apos;a&apos;, 1), (&apos;betty&apos;, 1)]</span><br></pre></td></tr></table></figure>
-<p><strong>思路解析及代码</strong><br>（1）字符切分(split)，统计各单词出现的次数(字典get)。（2）使用排序函数(sorted)对字典进行排序，其中定义比较函数compare是关键。代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># 功能：统计单词数，先按出现次数(大到小)排序，次数相同时，按单词字母顺序排序</span><br><span class="line">def compare(a,b):</span><br><span class="line">    if b[1]&gt;a[1]:</span><br><span class="line">        return 1</span><br><span class="line">    elif b[1]==a[1]:</span><br><span class="line">        if a[0]&gt;b[0]:</span><br><span class="line">            return 1</span><br><span class="line">        else:</span><br><span class="line">            return -1</span><br><span class="line">    else: return -1</span><br><span class="line">def count_words(s, n):</span><br><span class="line">    &quot;&quot;&quot;Return the n most frequently occuring words in s.&quot;&quot;&quot;</span><br><span class="line">    ##Count the number of occurences of each word in s</span><br><span class="line">    d =&#123;&#125;</span><br><span class="line">    for word in s.split():</span><br><span class="line">        d[word] =d.get(word,0)+1  #D[k] if k in D, else d.  d defaults to None</span><br><span class="line">    ##Sort the occurences in descending order (alphabexcally in case of xes)</span><br><span class="line">    #d =sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">    #print &quot;按值排序，从大到小 d=&quot;, d</span><br><span class="line">    vk =sorted(d.items(),cmp=compare)</span><br><span class="line">    return vk[:n]</span><br><span class="line">    ##Return the top n words as a list of tuples (&lt;word&gt;, &lt;count&gt;)</span><br><span class="line">def test_run():</span><br><span class="line">    &quot;&quot;&quot;Test count_words() with some inputs.&quot;&quot;&quot;</span><br><span class="line">    print count_words(&quot;cat bat mat cat bat cat&quot;, 3)</span><br><span class="line">    print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;, 3)</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    test_run()</span><br></pre></td></tr></table></figure>
-<p>##字典排序：sort、reversed、sorted</p>
-<p><strong>1、reversed(sequence)</strong><br>倒序：对一个序列进行倒序排序，注意该函数返回一个倒序迭代器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print list(reversed([&apos;dream&apos;,&apos;a&apos;,&apos;have&apos;,&apos;I&apos;]))</span><br><span class="line">#输出： [&apos;I&apos;, &apos;have&apos;, &apos;a&apos;, &apos;dream&apos;]</span><br></pre></td></tr></table></figure>
-<p><strong>2、sorted(iterable, cmp=None, key=None, reverse=False)</strong><br>iterable为可迭代对象, 如果字典键值迭代器；cmp为<font color="red">比较函数</font>；key为排序用的键或键值；reverse指定升降序,True-降序,False-升序(默认)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键值大到小排序</span><br><span class="line">sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">#输出：[(&apos;cat&apos;, 3), (&apos;bat&apos;, 2), (&apos;mat&apos;, 1)]</span><br><span class="line">d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键字母顺序排序</span><br><span class="line">sorted(d.iteritems(),key=lambda t:t[0],reverse=False)</span><br><span class="line">#输出：[(&apos;bat&apos;, 2), (&apos;cat&apos;, 3), (&apos;mat&apos;, 1)]</span><br></pre></td></tr></table></figure>
-<p><font color="blue">cmp ——&gt; cmp(x,y) </font>，该函数会在x &lt; y时返回负数，在x &gt; y 时返回正数，如果x = y则返回0（根据你的定义）。如下：</p>
-<pre><code># 内建比较函数cmp的默认方法
-cmp(42,32)  ---&gt; 1
-cmp(99,100) ---&gt;-1
-cmp(10,10)  ---&gt; 0
-</code></pre><p>自定义cmp方法。如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 例1、数字降序排序 | 也可直接用：numbers.sort(reverse=True))</span><br><span class="line">numbers=[5,2,9,7]</span><br><span class="line">numbers.sort(lambda a,b:b-a) #cmp=lambda a,b:b-a</span><br><span class="line">输出 ：[9,7,5,2]</span><br><span class="line"># 例2、如果数组成员不是数字，而是其它的类型例如dict，想根据某个属性来排序</span><br><span class="line">persons=[&#123;&apos;name&apos;:&apos;zhang3&apos;,&apos;age&apos;:15&#125;,&#123;&apos;name&apos;:&apos;li4&apos;,&apos;age&apos;:12&#125;]</span><br><span class="line">persons.sort(lambda a,b:a[&apos;age&apos;]-b[&apos;age&apos;]) </span><br><span class="line">输出 ：[&#123;&apos;age&apos;: 12, &apos;name&apos;: &apos;li4&apos;&#125;, &#123;&apos;age&apos;: 15, &apos;name&apos;: &apos;zhang3&apos;&#125;]</span><br></pre></td></tr></table></figure>
-<p>从例子中可知，<em>cmp=lambda a,b:a[‘age’]-b[‘age’], a={‘name’:’zhang3’,’age’:15}，b={‘name’:’li4’,’age’:12}，a[‘age’]=15-12=b[‘age’]=3&gt;0</em>，返回True。触发reverse=True参数，即从小打大，顺序互换。</p>
-<p><strong>注意</strong>：在python3.x中取消了cmp参数，也不支持直接往sort()里面传函数了。可以构造排序函数传递给key来实现。</p>
+      <h1 id="post__title" data-identifier="2016-05-13">VOA | 听力 | Filter Blue Light for Better Sleep</h1>
+      <div style="max-width:640px; margin:0 auto 32px;"><br><div style="position: relative; 
+width:100%;
+padding-bottom:56.25%; /* 16:9 */ 
+height:0;"><br><br><iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="blue-light-filters.mp3" frameborder="0" allowfullscreen><br></iframe><br></div><br></div>
+
+
+
+<p>Many people like to use their phones or tablets at night before they go to sleep.</p>
+<p>However, the light from mobile devices can interfere with sleep. But not all light carries the same risk.</p>
+<p>Recent studies have shown that within the light <strong>spectrum</strong>, blue light can have the worst effect on sleep.</p>
+<p>A study in the UK showed that blue light actually can keep sleepy people awake.Tired drivers who were exposed to blue light became as <strong>alert</strong> as those who drank two cups of coffee.</p>
+<p>Blue light <strong>filters</strong> have been developed for mobile devices to help with sleep issues. Apps are available for Android devices that filter blue light on screens. Updates to the iPhone, iPad and Amazon Fire tablet have added blue light filters.</p>
+<h3 id="Twilight-App-Android-Devices"><a href="#Twilight-App-Android-Devices" class="headerlink" title="Twilight App - Android Devices"></a>Twilight App - Android Devices</h3><p>Twilight is a free app that filters blue light on Android device screens. It can be set to turn on by itself. Or users can turn it on and off when they want.In the app settings, you can change the <strong>intensity</strong> of the filter, the color and the time the filter turns on and off.</p>
+<p>Twilight works across all apps, though some apps may not work fully when Twilight’s filter is on.</p>
+<p>There is a YouTube video that explains Twilight use.</p>
+<p><a href="https://play.google.com/store/apps/details?id=com.urbandroid.lux&amp;hl=en" target="_blank" rel="external">Twilight</a> is available free for Android devices in the Google Play store.</p>
+<h3 id="Night-Shift-iPhone-and-iPad"><a href="#Night-Shift-iPhone-and-iPad" class="headerlink" title="Night Shift - iPhone and iPad"></a>Night Shift - iPhone and iPad</h3><p>Apple updated its operating system for iPhone and iPad earlier this year. Included in the update is Night Shift, a blue light filter.</p>
+<p>This feature is available on newer iPhones and iPads, including the iPhone 5s and later, and the iPad Air and later.</p>
+<p>Night Shift can be set to turn itself on every night or for the user to turn it on and off as wanted.</p>
+<p>To turn on Night Shift automatically every night, go to Settings, then Display, then Brightness and then Night Shift.On the Night Shift settings, move the switch to <strong>schedule</strong> Night Shift. It can be set for Night Shift to go on and off at specific times, or at sunset and sunrise.</p>
+<p>In Settings you can also adjust the color of the filter.</p>
+<p>Night Shift can also be turned on and off in Control Center on the iPhone and iPad. Open Control Center by swiping up from the bottom of the screen.</p>
+<p>The sun and moon icon there identifies Night Shift. Tap it to turn Night Shift on or off at any time.</p>
+<h3 id="Blue-Shade-–-Amazon-Fire-Tablets"><a href="#Blue-Shade-–-Amazon-Fire-Tablets" class="headerlink" title="Blue Shade – Amazon Fire Tablets"></a>Blue Shade – Amazon Fire Tablets</h3><p>In an update to Fire tablets at the end of last year, Amazon introduced Blue Shade to filter blue light on screens. Blue Shade is available on more recent Fire tablets.</p>
+<p>To turn on Blue Shade on a Fire tablet, swipe down from the top of the screen and tap Blue Shade. To adjust the color, go to Settings, then Display and, finally, Blue Shade.</p>
+<hr>
+<p>Words in This Story<br>spectrum - n. the group of colors that a ray of light can be separated into including red, orange, yellow, green, blue, indigo, and violet : the colors that can be seen in a rainbow<br>q<br>expose - v. to cause (someone) to experience something or to be influenced or affected by something</p>
+<p>alert - adj. able to think clearly and to notice things</p>
+<p>filter - n. a device that prevents some kinds of light, sound, electronic noises, etc., from passing through</p>
+<p>app - n. a computer program that performs a particular task (such as word processing)</p>
+<p>intensity - n. the usually flat part of a television or computer monitor that shows the images or text : the part of a television or computer that you look at when you are using it</p>
+<p>schedule - v. to plan (something) at a certain time</p>
+<p>swipe - v. to make a sweeping stroke</p>
+<p>introduce - v. to make (something) available for the first time</p>
 
     </article>
     <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
@@ -122,7 +150,7 @@ cmp(10,10)  ---&gt; 0
 
 
 <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="undefined" data-title="Python | 零碎知识（1）：字典排序问题" data-url="http://5267.github.io/undefined"></div>
+  <div class="ds-thread" data-thread-key="undefined" data-title="VOA | 听力 | Filter Blue Light for Better Sleep" data-url="http://5267.github.io/undefined"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
