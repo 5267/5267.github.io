@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2016/05/13/voa-Filter-Blue-Light-for-Better-Sleep/</loc>
-    <lastmod>2016-05-13T01:41:47.078Z</lastmod>
+    <lastmod>2016-05-13T02:02:52.752Z</lastmod>
     <data>
         <display>
         <title>VOA | 听力 | Filter Blue Light for Better Sleep</title>
