@@ -24,13 +24,13 @@
     <ul id="tags__ul">
       <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
       
-      <li id="投资理财" class="tags__li tags-btn">投资理财</li>
+      <li id="CodingLife" class="tags__li tags-btn">CodingLife</li>
       
       <li id="小技能" class="tags__li tags-btn">小技能</li>
       
-      <li id="读书笔记" class="tags__li tags-btn">读书笔记</li>
+      <li id="投资理财" class="tags__li tags-btn">投资理财</li>
       
-      <li id="CodingLife" class="tags__li tags-btn">CodingLife</li>
+      <li id="读书笔记" class="tags__li tags-btn">读书笔记</li>
       
       <li id="电影电视剧" class="tags__li tags-btn">电影电视剧</li>
       
@@ -50,8 +50,12 @@
     <nav id="pl__container">
       
             
-                <a class="投资理财 pl__all" href="/2016/05/05/stock-txd/" title="炒股 | 通信达T0002个性化设置">
-                  <span class="pl__circle"></span><span class="pl__title">炒股 | 通信达T0002个性化设置</span><span class="pl__date">2016-05-05</span>
+                <a class="CodingLife pl__all" href="/2016/05/07/Coding/" title="Python | 零碎知识（1）：字典排序问题">
+                  <span class="pl__circle"></span><span class="pl__title">Python | 零碎知识（1）：字典排序问题</span><span class="pl__date">2016-05-07</span>
+                </a>
+            
+                <a class="CodingLife pl__all" href="/2016/05/23/python-金融研究相关库/" title="Python | 零碎知识（2）：Py-金融研究相关实用库">
+                  <span class="pl__circle"></span><span class="pl__title">Python | 零碎知识（2）：Py-金融研究相关实用库</span><span class="pl__date">2016-05-23</span>
                 </a>
             
       
@@ -62,24 +66,24 @@
             
       
             
+                <a class="投资理财 pl__all" href="/2016/05/05/stock-txd/" title="炒股 | 通信达T0002个性化设置">
+                  <span class="pl__circle"></span><span class="pl__title">炒股 | 通信达T0002个性化设置</span><span class="pl__date">2016-05-05</span>
+                </a>
+            
+      
+            
                 <a class="读书笔记 pl__all" href="/2016/05/04/test-post/" title="道德经 | 第一章">
                   <span class="pl__circle"></span><span class="pl__title">道德经 | 第一章</span><span class="pl__date">2016-05-04</span>
                 </a>
             
       
             
-                <a class="CodingLife pl__all" href="/2016/05/07/Coding/" title="Python | 零碎知识（1）：字典排序问题">
-                  <span class="pl__circle"></span><span class="pl__title">Python | 零碎知识（1）：字典排序问题</span><span class="pl__date">2016-05-07</span>
+                <a class="电影电视剧 pl__all" href="/2016/05/09/tv-series-1/" title="电视剧 | 疑犯追踪 | Person of Interest">
+                  <span class="pl__circle"></span><span class="pl__title">电视剧 | 疑犯追踪 | Person of Interest</span><span class="pl__date">2016-05-09</span>
                 </a>
-            
-      
             
                 <a class="电影电视剧 pl__all" href="/2016/05/05/film-comments/" title="电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014">
                   <span class="pl__circle"></span><span class="pl__title">电影 | 未成年之欲 | Teen Lust | 喜剧 | 2014</span><span class="pl__date">2016-05-05</span>
-                </a>
-            
-                <a class="电影电视剧 pl__all" href="/2016/05/09/tv-series-1/" title="电视剧 | 疑犯追踪 | Person of Interest">
-                  <span class="pl__circle"></span><span class="pl__title">电视剧 | 疑犯追踪 | Person of Interest</span><span class="pl__date">2016-05-09</span>
                 </a>
             
       
@@ -100,12 +104,12 @@
   <h2 id="实战：统计Python中的字数"><a href="#实战：统计Python中的字数" class="headerlink" title="实战：统计Python中的字数"></a><font color="blue">实战：统计Python中的字数</font></h2><p><strong>问题</strong><br>在 Python 中实施函数“count_words()”，该函数将字符串“s”和数字“n”用作输入，并返回“s”中“n”个出现频率最高的单词。返回值应该是一个元组列表-出现频率最高的“n”个单词及其相应的出现次数“[(, ), (, ), …]”，按出现次数的降序排列。<br>您可以假设所有输入都是小写形式，并且不含标点符号或其他字符（只包含字母和单个分隔空格）。如果出现次数相同，则按字母顺序排列出现次数相同的单词。<br>例如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;,3)</span><br><span class="line">    # 输出  =  [(&apos;butter&apos;, 2), (&apos;a&apos;, 1), (&apos;betty&apos;, 1)]</span><br></pre></td></tr></table></figure>
 <p><strong>思路解析及代码</strong><br>（1）字符切分(split)，统计各单词出现的次数(字典get)。（2）使用排序函数(sorted)对字典进行排序，其中定义比较函数compare是关键。代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># 功能：统计单词数，先按出现次数(大到小)排序，次数相同时，按单词字母顺序排序</span><br><span class="line">def compare(a,b):</span><br><span class="line">    if b[1]&gt;a[1]:</span><br><span class="line">        return 1</span><br><span class="line">    elif b[1]==a[1]:</span><br><span class="line">        if a[0]&gt;b[0]:</span><br><span class="line">            return 1</span><br><span class="line">        else:</span><br><span class="line">            return -1</span><br><span class="line">    else: return -1</span><br><span class="line">def count_words(s, n):</span><br><span class="line">    &quot;&quot;&quot;Return the n most frequently occuring words in s.&quot;&quot;&quot;</span><br><span class="line">    ##Count the number of occurences of each word in s</span><br><span class="line">    d =&#123;&#125;</span><br><span class="line">    for word in s.split():</span><br><span class="line">        d[word] =d.get(word,0)+1  #D[k] if k in D, else d.  d defaults to None</span><br><span class="line">    ##Sort the occurences in descending order (alphabexcally in case of xes)</span><br><span class="line">    #d =sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">    #print &quot;按值排序，从大到小 d=&quot;, d</span><br><span class="line">    vk =sorted(d.items(),cmp=compare)</span><br><span class="line">    return vk[:n]</span><br><span class="line">    ##Return the top n words as a list of tuples (&lt;word&gt;, &lt;count&gt;)</span><br><span class="line">def test_run():</span><br><span class="line">    &quot;&quot;&quot;Test count_words() with some inputs.&quot;&quot;&quot;</span><br><span class="line">    print count_words(&quot;cat bat mat cat bat cat&quot;, 3)</span><br><span class="line">    print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;, 3)</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    test_run()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>功能：统计单词数，先按出现次数(大到小)排序，次数相同时，按单词字母顺序排序</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">def compare(a,b):</span><br><span class="line">    if b[1]&gt;a[1]:</span><br><span class="line">        return 1</span><br><span class="line">    elif b[1]==a[1]:</span><br><span class="line">        if a[0]&gt;b[0]:</span><br><span class="line">            return 1</span><br><span class="line">        else:</span><br><span class="line">            return -1</span><br><span class="line">    else: return -1</span><br><span class="line">def count_words(s, n):</span><br><span class="line">    &quot;&quot;&quot;Return the n most frequently occuring words in s.&quot;&quot;&quot;</span><br><span class="line">    ##Count the number of occurences of each word in s</span><br><span class="line">    d =&#123;&#125;</span><br><span class="line">    for word in s.split():</span><br><span class="line">        d[word] =d.get(word,0)+1  #D[k] if k in D, else d.  d defaults to None</span><br><span class="line">    ##Sort the occurences in descending order (alphabexcally in case of xes)</span><br><span class="line">    #d =sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">    #print &quot;按值排序，从大到小 d=&quot;, d</span><br><span class="line">    vk =sorted(d.items(),cmp=compare)</span><br><span class="line">    return vk[:n]</span><br><span class="line">    ##Return the top n words as a list of tuples (&lt;word&gt;, &lt;count&gt;)</span><br><span class="line">def test_run():</span><br><span class="line">    &quot;&quot;&quot;Test count_words() with some inputs.&quot;&quot;&quot;</span><br><span class="line">    print count_words(&quot;cat bat mat cat bat cat&quot;, 3)</span><br><span class="line">    print count_words(&quot;betty bought a bit of butter but the butter was bitter&quot;, 3)</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    test_run()</span><br></pre></td></tr></table></figure>
 <p>##字典排序：sort、reversed、sorted</p>
 <p><strong>1、reversed(sequence)</strong><br>倒序：对一个序列进行倒序排序，注意该函数返回一个倒序迭代器。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print list(reversed([&apos;dream&apos;,&apos;a&apos;,&apos;have&apos;,&apos;I&apos;]))</span><br><span class="line">#输出： [&apos;I&apos;, &apos;have&apos;, &apos;a&apos;, &apos;dream&apos;]</span><br></pre></td></tr></table></figure>
 <p><strong>2、sorted(iterable, cmp=None, key=None, reverse=False)</strong><br>iterable为可迭代对象, 如果字典键值迭代器；cmp为<font color="red">比较函数</font>；key为排序用的键或键值；reverse指定升降序,True-降序,False-升序(默认)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键值大到小排序</span><br><span class="line">sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line">#输出：[(&apos;cat&apos;, 3), (&apos;bat&apos;, 2), (&apos;mat&apos;, 1)]</span><br><span class="line">d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键字母顺序排序</span><br><span class="line">sorted(d.iteritems(),key=lambda t:t[0],reverse=False)</span><br><span class="line">#输出：[(&apos;bat&apos;, 2), (&apos;cat&apos;, 3), (&apos;mat&apos;, 1)]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键值大到小排序</span><br><span class="line"> sorted(d.iteritems(),key=lambda t:t[1],reverse=True)</span><br><span class="line"> #输出：[(&apos;cat&apos;, 3), (&apos;bat&apos;, 2), (&apos;mat&apos;, 1)]</span><br><span class="line"> d = &#123;&apos;bat&apos;: 2, &apos;cat&apos;: 3, &apos;mat&apos;: 1&#125; #按键字母顺序排序</span><br><span class="line"> sorted(d.iteritems(),key=lambda t:t[0],reverse=False)</span><br><span class="line"> #输出：[(&apos;bat&apos;, 2), (&apos;cat&apos;, 3), (&apos;mat&apos;, 1)]</span><br></pre></td></tr></table></figure>
 <p><font color="blue">cmp ——&gt; cmp(x,y) </font>，该函数会在x &lt; y时返回负数，在x &gt; y 时返回正数，如果x = y则返回0（根据你的定义）。如下：</p>
 <pre><code># 内建比较函数cmp的默认方法
 cmp(42,32)  ---&gt; 1
